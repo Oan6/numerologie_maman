@@ -1,14 +1,29 @@
 #Crée un theme de numerologie 
-
-
+class Integer 
+  def red 
+    "\e[31m#{self}\e[0m"
+  end 
+  def green
+  	"\e[32m#{self}\e[0m"
+  end 
+  def cyan
+  	"\e[36m#{self}\e[0m"
+  end
+  def yellow
+  	"\e[33m#{self}\e[0m"
+  end
+  def underline
+  	"\e[4m#{self}\e[0m"
+  end
+end 
 
 a = ARGV[0]
 b = ARGV[1]
 c = ARGV[2]
 d = ARGV[3]
 e = ARGV[4]
-
-
+f = ARGV[5]
+#manque l'exception 11/2
 def calculateur_date(date)
 
 	jour = date[0].to_i + date[1].to_i
@@ -61,23 +76,85 @@ def calculateur_date(date)
 
 
 
-	puts "le cycle en jour est #{jour}" 
-	puts "le cycle en mois est #{mois}"
-	puts "le cycle en année est #{annee}"
-	puts "le numéro de la mission est #{mission}"
-	puts "le numéro de l'action1 est #{action1}"
-	puts "le numéro de l'action2 est #{action2}"
-	puts "le numéro de l'action3 est #{action3}"
-	puts "le numéro de l'action4 est #{action4}"
+	puts "le cycle en jour est #{jour.to_i.cyan}" 
+	puts "le cycle en mois est #{mois.to_i.cyan}"
+	puts "le cycle en année est #{annee.to_i.cyan}"
+	puts "le numéro de la mission est #{mission.to_i.cyan}"
+	puts "le numéro de l'action1 est #{action1.to_i.cyan}"
+	puts "le numéro de l'action2 est #{action2.to_i.cyan}"
+	puts "le numéro de l'action3 est #{action3.to_i.cyan}"
+	puts "le numéro de l'action4 est #{action4.to_i.cyan}"
 end 
 
 def calculateur_nom(nom , nom1 , nom2=nil , nom3=nil ,nom4=nil)
 
+	sa = [nil]
+	sa = nom + nom1 
+	if nom2 != nil 
+		sa = sa + nom2
+	end 
+	if nom3 != nil 
+		sa = sa +nom3 
+	end 
+	if nom4 != nil 
+		sa = sa +nom4
+	end 
+	sa = sa.downcase
+	t1 = 0
+	t2 = 0 
+	t3 = 0
+	t4 = 0
+	t5 = 0
+	t6 = 0
+	t7 = 0
+	t8 = 0
+	t9 = 0
+	for i in 0..sa.length 
+		if sa[i] == 'a' || sa[i] == 'j' || sa[i] == 's'
+			t1 = t1 + 1 
+		end
+		if sa[i] == 'b' || sa[i] == 'k' || sa[i] == 't'
+			t2 = t2 + 1 
+		end
+		if sa[i] == 'c' || sa[i] == 'l' || sa[i] == 'u'
+			t3 = t3 + 1 
+		end
+		if sa[i] == 'd' || sa[i] == 'm' || sa[i] == 'v'
+			t4 = t4 + 1 
+		end
+		if sa[i] == 'e' || sa[i] == 'n' || sa[i] == 'w'
+			t5 = t5 + 1 
+		end
+		if sa[i] == 'f' || sa[i] == 'o' || sa[i] == 'x'
+			t6 = t6 + 1 
+		end
+		if sa[i] == 'g' || sa[i] == 'p' || sa[i] == 'y'
+			t7 = t7 + 1 
+		end
+		if sa[i] == 'h' || sa[i] == 'q' || sa[i] == 'z'
+			t8 = t8 + 1 
+		end
+		if sa[i] == 'i' || sa[i] == 'r' 
+			t9 = t9 + 1 
+		end
+
+	end
+
+	puts "il y a #{t1.red} fois le nombre 1"
+	puts "il y a #{t2.red} fois le nombre 2"
+	puts "il y a #{t3.red} fois le nombre 3"
+	puts "il y a #{t4.red} fois le nombre 4"
+	puts "il y a #{t5.red} fois le nombre 5"
+	puts "il y a #{t6.red} fois le nombre 6"
+	puts "il y a #{t7.red} fois le nombre 7"
+	puts "il y a #{t8.red} fois le nombre 8"
+	puts "il y a #{t9.red} fois le nombre 9"
+end    
 
 
 
-
-#calculateur_date(a)
+calculateur_date(a)
+calculateur_nom(b,c,d,e,f)
 
 
 
