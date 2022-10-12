@@ -87,7 +87,8 @@ def calculateur_date(date)
 end 
 
 def calculateur_nom(nom , nom1 , nom2=nil , nom3=nil ,nom4=nil)
-
+	az = nom
+	as = nom1 
 	sa = [nil]
 	sa = nom + nom1 
 	if nom2 != nil 
@@ -109,36 +110,158 @@ def calculateur_nom(nom , nom1 , nom2=nil , nom3=nil ,nom4=nil)
 	t7 = 0
 	t8 = 0
 	t9 = 0
+	ame = 0
+	realisation = 0 
+	actif = 0 
+	hereditaire = 0 
+puts as
 	for i in 0..sa.length 
 		if sa[i] == 'a' || sa[i] == 'j' || sa[i] == 's'
-			t1 = t1 + 1 
+			t1 = t1 + 1
+			if sa[i] == 'a'
+			ame = ame + 1
+			end  
+			if sa[i] == 'j' ||sa[i] == 's'
+			realisation = realisation + 1 
+			end
+ 
 		end
 		if sa[i] == 'b' || sa[i] == 'k' || sa[i] == 't'
 			t2 = t2 + 1 
+			if sa[i] == 'b' ||sa[i] == 'k' || sa[i] == 't'
+			realisation = realisation + 2 
+			end 
 		end
 		if sa[i] == 'c' || sa[i] == 'l' || sa[i] == 'u'
 			t3 = t3 + 1 
+			if sa[i] == 'u'
+			ame = ame + 3 
+			end 
+			if sa[i] == 'c' ||sa[i] == 'l' 
+			realisation = realisation + 3
+			end
+ 
 		end
 		if sa[i] == 'd' || sa[i] == 'm' || sa[i] == 'v'
 			t4 = t4 + 1 
+			if sa[i] == 'd' ||sa[i] == 'm' || sa[i] == 'v'
+			realisation = realisation + 4 
+			end
+ 
 		end
 		if sa[i] == 'e' || sa[i] == 'n' || sa[i] == 'w'
 			t5 = t5 + 1 
+			if sa[i] == 'e'
+			ame = ame + 5 
+			end 
+			if sa[i] == 'n' ||sa[i] == 'w' 
+			realisation = realisation + 5 
+			end 
 		end
 		if sa[i] == 'f' || sa[i] == 'o' || sa[i] == 'x'
 			t6 = t6 + 1 
+			if sa[i] == 'o'
+			ame = ame + 6 
+			end 
+			if sa[i] == 'f' ||sa[i] == 'x' 
+			realisation = realisation + 6
+			end
+ 
 		end
 		if sa[i] == 'g' || sa[i] == 'p' || sa[i] == 'y'
 			t7 = t7 + 1 
+			if sa[i] == 'y'
+			ame = ame + 7 
+			end 
+			if sa[i] == 'g' ||sa[i] == 'p'
+			realisation = realisation + 7
+			end
+
 		end
 		if sa[i] == 'h' || sa[i] == 'q' || sa[i] == 'z'
 			t8 = t8 + 1 
+			if sa[i] == 'h' ||sa[i] == 'q' || sa[i] == 'z'
+			realisation = realisation + 8
+			end
+ 
 		end
 		if sa[i] == 'i' || sa[i] == 'r' 
-			t9 = t9 + 1 
+			t9 = t9 + 1
+			if sa[i] == 'i'
+			ame = ame + 9 
+			end  
+			if sa[i] == 'r' 
+			realisation = realisation + 9 
+			end
+
 		end
 
 	end
+for i in 0..as.length-1 
+	case as[i] 
+	when 'a' then actif = actif + 1
+	when 'b' then actif = actif + 2 
+	when 'c' then actif = actif + 3
+	when 'd' then actif = actif + 4 
+	when 'e' then actif = actif + 5
+	when 'f' then actif = actif + 6 
+	when 'g' then actif = actif + 7
+	when 'h' then actif = actif + 8 
+	when 'i' then actif = actif + 9
+	when 'j' then actif = actif + 1 
+	when 'k' then actif = actif + 2
+	when 'l' then actif = actif + 3 
+	when 'm' then actif = actif + 4
+	when 'n' then actif = actif + 5
+	when 'o' then actif = actif + 6 
+	when 'p' then actif = actif + 7
+	when 'q' then actif = actif + 8 
+	when 'r' then actif = actif + 9
+	when 's' then actif = actif + 1 
+	when 't' then actif = actif + 2
+	when 'u' then actif = actif + 3 
+	when 'v' then actif = actif + 4
+	when 'w' then actif = actif + 5 
+	when 'x' then actif = actif + 6
+	when 'y' then actif = actif + 7 
+	when 'z' then actif = actif + 8 
+	else 
+		puts "MDR"
+	end 
+end 
+
+for i in 0..az.length-1
+	case az[i] 
+	when 'a' then hereditaire = hereditaire + 1
+	when 'b' then hereditaire = hereditaire + 2 
+	when 'c' then hereditaire = hereditaire + 3
+	when 'd' then hereditaire = hereditaire + 4 
+	when 'e' then hereditaire = hereditaire + 5
+	when 'f' then hereditaire = hereditaire + 6 
+	when 'g' then hereditaire = hereditaire + 7
+	when 'h' then hereditaire = hereditaire + 8 
+	when 'i' then hereditaire = hereditaire + 9
+	when 'j' then hereditaire = hereditaire + 1 
+	when 'k' then hereditaire = hereditaire + 2
+	when 'l' then hereditaire = hereditaire + 3 
+	when 'm' then hereditaire = hereditaire + 4
+	when 'n' then hereditaire = hereditaire + 5
+	when 'o' then hereditaire = hereditaire + 6 
+	when 'p' then hereditaire = hereditaire + 7
+	when 'q' then hereditaire = hereditaire + 8 
+	when 'r' then hereditaire = hereditaire + 9
+	when 's' then hereditaire = hereditaire + 1 
+	when 't' then hereditaire = hereditaire + 2
+	when 'u' then hereditaire = hereditaire + 3 
+	when 'v' then hereditaire = hereditaire + 4
+	when 'w' then hereditaire = hereditaire + 5 
+	when 'x' then hereditaire = hereditaire + 6
+	when 'y' then hereditaire = hereditaire + 7 
+	when 'z' then hereditaire = hereditaire + 8 
+	else 
+		puts "MDR"
+	end 
+end 
 
 	puts "il y a #{t1.red} fois le nombre 1"
 	puts "il y a #{t2.red} fois le nombre 2"
@@ -149,6 +272,25 @@ def calculateur_nom(nom , nom1 , nom2=nil , nom3=nil ,nom4=nil)
 	puts "il y a #{t7.red} fois le nombre 7"
 	puts "il y a #{t8.red} fois le nombre 8"
 	puts "il y a #{t9.red} fois le nombre 9"
+#
+accomplissement = (t1*1) + (t2*2) + (t3*3) + (t4*4) + (t5*5) + (t6*6) + (t7*7) + (t8*8) + (t9*9)
+
+	while accomplissement > 9 
+		accomplissement = accomplissement.to_s
+	  	
+	  		a = accomplissement[0]
+	  		b = accomplissement[1]
+	  		c = accomplissement[2]
+	  		
+	  		accomplissement = a.to_i + b.to_i + c.to_i
+	  	 
+	end 
+	puts accomplissement
+	puts ame
+	puts realisation
+	puts actif
+	puts hereditaire
+	puts actif + hereditaire
 end    
 
 
